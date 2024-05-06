@@ -17,10 +17,10 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     axios
-      .post("https://100.20.92.101/api/v1/users/login", inputFields)
+      .post("https://personal-budget-back.onrender.com/api/v1/users/login", inputFields)
       .then((res) => {
         console.log(res);
-        if (res.statusText === "OK") {
+        if (res.status === 200) {
           // value.toast.push({status: "success", msg:"User signed up successfully"})
           localStorage.setItem("token", res.data.accessToken);
           localStorage.setItem("isAuthenticated", "true");
@@ -29,7 +29,7 @@ const Login = () => {
           // value.user = res.data.user;
           navigate("/dashboard");
         } else {
-          const errorData = res.json();
+          const errorData = res.data.message;
           console.error("Error signing the user:", errorData.message);
         }
       })

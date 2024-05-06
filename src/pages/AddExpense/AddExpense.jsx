@@ -42,13 +42,13 @@ const AddExpense = () => {
     e.preventDefault();
     axios
       .post(
-        "https://100.20.92.101/api/v1/expense/addexpense",
+        "https://personal-budget-back.onrender.com/api/v1/expense/addexpense",
         inputFields,
         config
       )
       .then((res) => {
         console.log(res);
-        if (res.statusText === "OK") {
+        if (res.status === 20) {
           console.log("res", res);
           setDataChange(!dataChange);
           setInputFields({
@@ -69,10 +69,10 @@ const AddExpense = () => {
 
   const handleEditExpense = (id) => {
     axios
-      .get(`https://100.20.92.101/api/v1/expense/getexpense/${id}`, config)
+      .get(`https://personal-budget-back.onrender.com/api/v1/expense/getexpense/${id}`, config)
       .then((res) => {
         console.log(res);
-        if (res.statusText === "OK") {
+        if (res.status === 200) {
           setNewCategory(res.data.expense.category);
           setNewExpense(res.data.expense.expense);
           setNewExpenseDate(res.data.expense.expensedate);
@@ -123,12 +123,12 @@ const AddExpense = () => {
   const handleDeleteExpense = (id) => {
     axios
       .delete(
-        `https://100.20.92.101/api/v1/expense/deleteexpense/${id}`,
+        `https://personal-budget-back.onrender.com/api/v1/expense/deleteexpense/${id}`,
         config
       )
       .then((res) => {
         console.log(res);
-        if (res.statusText === "OK") {
+        if (res.status === 200) {
           setDataChange(!dataChange);
           toast.success("Expense deleted successfully");
         } else {
@@ -144,10 +144,10 @@ const AddExpense = () => {
   useEffect(() => {
     isAuthenticated === "true" &&
       axios
-        .get("https://100.20.92.101/api/v1/budget/budgets", config)
+        .get("https://personal-budget-back.onrender.com/api/v1/budget/budgets", config)
         .then((res) => {
           console.log("dd", res);
-          if (res.statusText === "OK") {
+          if (res.status === 200) {
             console.log("res", res);
 
             setBudgets(res.data.budgets);
@@ -164,10 +164,10 @@ const AddExpense = () => {
   useEffect(() => {
     isAuthenticated === "true" &&
       axios
-        .get("https://100.20.92.101/api/v1/expense/expenses", config)
+        .get("https://personal-budget-back.onrender.com/api/v1/expense/expenses", config)
         .then((res) => {
           console.log("kk", res);
-          if (res.statusText === "OK") {
+          if (res.status=== 200) {
             console.log("res", res);
             setExpenses(res.data.expenses);
           } else {

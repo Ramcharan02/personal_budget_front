@@ -20,11 +20,11 @@ const SignUp = () => {
   const handleSignUp = (event) => {
     event.preventDefault();
     axios
-      .post("https://100.20.92.101/api/v1/users/signup", inputFields)
+      .post("https://personal-budget-back.onrender.com/api/v1/users/signup", inputFields)
       .then((res) => {
         console.log(res);
-        if (res.statusText === "OK") {
-          // value.toast.push({status: "success", msg:"User signed up successfully"})
+        if (res.status === 200) {
+          //value.toast.push({status: "success", msg:"User signed up successfully"})
           navigate("/login");
         } else {
           const errorData = res.json();
@@ -32,8 +32,8 @@ const SignUp = () => {
         }
       })
       .catch((err) => {
-       // console.log(err.response.data.error);
-        // value.toast.push({status: "error", msg:err.response.data.error})
+       console.log(err.response.data.error);
+        //value.toast.push({status: "error", msg:err.response.data.error})
       });
   };
 
@@ -84,7 +84,7 @@ const SignUp = () => {
           <label for="password">Password</label>
         </div>
 
-        <button className="btn btn-primary w-100 py-2" type="submit" id="signupbutton">
+        <button className="btn btn-primary w-100 py-2" type="submit">
           Sign Up
         </button>
         <p style={{color:"white"}}>

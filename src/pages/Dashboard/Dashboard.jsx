@@ -51,10 +51,10 @@ const Dashboard = () => {
   useEffect(() => {
     isAuthenticated === "true" &&
       axios
-        .get("https://100.20.92.101/api/v1/budget/budgets", config)
+        .get("https://personal-budget-back.onrender.com/api/v1/budget/budgets", config)
         .then((res) => {
           console.log(res);
-          if (res.statusText === "OK") {
+          if (res.status === 200) {
             console.log("res", res);
             setBudgets(res.data.budgets);
           } else {
@@ -70,9 +70,9 @@ const Dashboard = () => {
   useEffect(() => {
     isAuthenticated === "true" &&
       axios
-        .get("https://100.20.92.101/api/v1/expense/expenses", config)
+        .get("https://personal-budget-back.onrender.com/api/v1/expense/expenses", config)
         .then((res) => {
-          if (res.statusText === "OK") {
+          if (res.status === 200) {
             console.log("res", res);
             setExpenses(res.data.expenses);
           } else {

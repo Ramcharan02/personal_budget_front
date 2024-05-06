@@ -45,10 +45,10 @@ const Header = () => {
 
   const handleRefreshToken = () => {
     axios
-      .post("https://100.20.92.101/api/v1/users/refreshToken", {}, config)
+      .post("https://personal-budget-back.onrender.com/api/v1/users/refreshToken", {}, config)
       .then((res) => {
         console.log(res);
-        if (res.statusText === "OK") {
+        if (res.status === 200) {
           localStorage.setItem("token", res.data.newAccessToken);
           jwtToken = res.data.newAccessToken;
           setModel(false);

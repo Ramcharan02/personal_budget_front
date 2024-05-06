@@ -35,13 +35,13 @@ const AddBudget = () => {
     e.preventDefault();
     axios
       .post(
-        "https://100.20.92.101/api/v1/budget/addbudget",
+        "https://personal-budget-back.onrender.com/api/v1/budget/addbudget",
         inputFields,
         config
       )
       .then((res) => {
         console.log(res);
-        if (res.statusText === "OK") {
+        if (res.status === 200) {
           console.log("res", res);
           setDataChange(!dataChange);
           setInputFields({
@@ -60,10 +60,10 @@ const AddBudget = () => {
 
   const handleEditBudget = (id) => {
     axios
-      .get(`https://100.20.92.101/api/v1/budget/getbudget/${id}`, config)
+      .get(`https://personal-budget-back.onrender.com/api/v1/budget/getbudget/${id}`, config)
       .then((res) => {
         console.log(res);
-        if (res.statusText === "OK") {
+        if (res.status === 200) {
           setNewCategory(res.data.budget.category);
           setNewBudget(res.data.budget.budget);
         } else {
@@ -80,13 +80,13 @@ const AddBudget = () => {
   const handleUpdate = () => {
     axios
       .put(
-        `https://100.20.92.101/api/v1/budget/updatebudget/${editId}`,
+        `https://personal-budget-back.onrender.com/api/v1/budget/updatebudget/${editId}`,
         { category: newCategory, budget: newBudget },
         config
       )
       .then((res) => {
         console.log(res);
-        if (res.statusText === "OK") {
+        if (res.status ===200) {
           console.log("res", res);
           setDataChange(!dataChange);
           setNewCategory("");
@@ -105,12 +105,12 @@ const AddBudget = () => {
   const handleDeleteBudget = (id) => {
     axios
       .delete(
-        `https://100.20.92.101/api/v1/budget/deletebudget/${id}`,
+        `https://personal-budget-back.onrender.com/api/v1/budget/deletebudget/${id}`,
         config
       )
       .then((res) => {
         console.log(res);
-        if (res.statusText === "OK") {
+        if (res.status === 200) {
           setDataChange(!dataChange);
           toast.success("Budget deleted successfully");
         } else {
@@ -126,10 +126,10 @@ const AddBudget = () => {
   useEffect(() => {
     isAuthenticated === "true" &&
       axios
-        .get("https://100.20.92.101/api/v1/budget/budgets", config)
+        .get("https://personal-budget-back.onrender.com/api/v1/budget/budgets", config)
         .then((res) => {
           console.log(res);
-          if (res.statusText === "OK") {
+          if (res.status=== 200) {
             console.log("res", res);
             setBudgets(res.data.budgets);
           } else {
