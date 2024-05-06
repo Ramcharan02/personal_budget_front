@@ -51,7 +51,7 @@ const Dashboard = () => {
   useEffect(() => {
     isAuthenticated === "true" &&
       axios
-        .get("http://100.20.92.101/api/v1/budget/budgets", config)
+        .get("https://100.20.92.101/api/v1/budget/budgets", config)
         .then((res) => {
           console.log(res);
           if (res.statusText === "OK") {
@@ -70,7 +70,7 @@ const Dashboard = () => {
   useEffect(() => {
     isAuthenticated === "true" &&
       axios
-        .get("http://100.20.92.101/api/v1/expense/expenses", config)
+        .get("https://100.20.92.101/api/v1/expense/expenses", config)
         .then((res) => {
           if (res.statusText === "OK") {
             console.log("res", res);

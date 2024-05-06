@@ -20,7 +20,7 @@ const SignUp = () => {
   const handleSignUp = (event) => {
     event.preventDefault();
     axios
-      .post("http://100.20.92.101/api/v1/users/signup", inputFields)
+      .post("https://100.20.92.101/api/v1/users/signup", inputFields)
       .then((res) => {
         console.log(res);
         if (res.statusText === "OK") {

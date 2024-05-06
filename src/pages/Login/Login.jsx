@@ -17,7 +17,7 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     axios
-      .post("http://100.20.92.101/api/v1/users/login", inputFields)
+      .post("https://100.20.92.101/api/v1/users/login", inputFields)
       .then((res) => {
         console.log(res);
         if (res.statusText === "OK") {

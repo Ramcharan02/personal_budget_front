@@ -45,7 +45,7 @@ const Header = () => {
 
   const handleRefreshToken = () => {
     axios
-      .post("http://localhost:3000/api/v1/users/refreshToken", {}, config)
+      .post("https://100.20.92.101/api/v1/users/refreshToken", {}, config)
       .then((res) => {
         console.log(res);
         if (res.statusText === "OK") {

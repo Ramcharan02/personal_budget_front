@@ -35,7 +35,7 @@ const AddBudget = () => {
     e.preventDefault();
     axios
       .post(
-        "http://100.20.92.101/api/v1/budget/addbudget",
+        "https://100.20.92.101/api/v1/budget/addbudget",
         inputFields,
         config
       )
@@ -60,7 +60,7 @@ const AddBudget = () => {
 
   const handleEditBudget = (id) => {
     axios
-      .get(`http://100.20.92.101/api/v1/budget/getbudget/${id}`, config)
+      .get(`https://100.20.92.101/api/v1/budget/getbudget/${id}`, config)
       .then((res) => {
         console.log(res);
         if (res.statusText === "OK") {
@@ -80,7 +80,7 @@ const AddBudget = () => {
   const handleUpdate = () => {
     axios
       .put(
-        `http://100.20.92.101/api/v1/budget/updatebudget/${editId}`,
+        `https://100.20.92.101/api/v1/budget/updatebudget/${editId}`,
         { category: newCategory, budget: newBudget },
         config
       )
@@ -105,7 +105,7 @@ const AddBudget = () => {
   const handleDeleteBudget = (id) => {
     axios
       .delete(
-        `http://100.20.92.101/api/v1/budget/deletebudget/${id}`,
+        `https://100.20.92.101/api/v1/budget/deletebudget/${id}`,
         config
       )
       .then((res) => {
@@ -126,7 +126,7 @@ const AddBudget = () => {
   useEffect(() => {
     isAuthenticated === "true" &&
       axios
-        .get("http://100.20.92.101/api/v1/budget/budgets", config)
+        .get("https://100.20.92.101/api/v1/budget/budgets", config)
         .then((res) => {
           console.log(res);
           if (res.statusText === "OK") {
