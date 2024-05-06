@@ -84,7 +84,7 @@ const SignUp = () => {
           <label for="password">Password</label>
         </div>
 
-        <button className="btn btn-primary w-100 py-2" type="submit">
+        <button className="btn btn-primary w-100 py-2" type="submit" id="signupbutton">
           Sign Up
         </button>
         <p style={{color:"white"}}>
