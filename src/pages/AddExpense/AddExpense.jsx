@@ -48,7 +48,7 @@ const AddExpense = () => {
       )
       .then((res) => {
         console.log(res);
-        if (res.status === 20) {
+        if (res.status === 200) {
           console.log("res", res);
           setDataChange(!dataChange);
           setInputFields({
