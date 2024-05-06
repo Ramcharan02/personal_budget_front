@@ -42,7 +42,7 @@ const AddExpense = () => {
     e.preventDefault();
     axios
       .post(
-        "http://localhost:3000/api/v1/expense/addexpense",
+        "http://100.20.92.101/api/v1/expense/addexpense",
         inputFields,
         config
       )
@@ -69,7 +69,7 @@ const AddExpense = () => {
 
   const handleEditExpense = (id) => {
     axios
-      .get(`http://localhost:3000/api/v1/expense/getexpense/${id}`, config)
+      .get(`http://100.20.92.101/api/v1/expense/getexpense/${id}`, config)
       .then((res) => {
         console.log(res);
         if (res.statusText === "OK") {
@@ -91,7 +91,7 @@ const AddExpense = () => {
   const handleUpdate = () => {
     axios
       .put(
-        `http://localhost:3000/api/v1/expense/updateexpense/${editId}`,
+        `http://100.20.92.101/api/v1/expense/updateexpense/${editId}`,
         {
           category: newCategory,
           expense: newExpense,
@@ -123,7 +123,7 @@ const AddExpense = () => {
   const handleDeleteExpense = (id) => {
     axios
       .delete(
-        `http://localhost:3000/api/v1/expense/deleteexpense/${id}`,
+        `http://100.20.92.101/api/v1/expense/deleteexpense/${id}`,
         config
       )
       .then((res) => {
@@ -144,7 +144,7 @@ const AddExpense = () => {
   useEffect(() => {
     isAuthenticated === "true" &&
       axios
-        .get("http://localhost:3000/api/v1/budget/budgets", config)
+        .get("http://100.20.92.101/api/v1/budget/budgets", config)
         .then((res) => {
           console.log("dd", res);
           if (res.statusText === "OK") {
@@ -164,7 +164,7 @@ const AddExpense = () => {
   useEffect(() => {
     isAuthenticated === "true" &&
       axios
-        .get("http://localhost:3000/api/v1/expense/expenses", config)
+        .get("http://100.20.92.101/api/v1/expense/expenses", config)
         .then((res) => {
           console.log("kk", res);
           if (res.statusText === "OK") {
