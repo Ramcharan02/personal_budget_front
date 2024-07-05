@@ -19,17 +19,13 @@
     "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-<<<<<<< HEAD
-    "test": "react-scripts test--transformIgnorePatterns 'node_modules/(?!my-library-dir)/'",
-=======
-    "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!my-library-dir)/'",
->>>>>>> a1863939 (changes)
-    "eject": "react-scripts eject",
-    "cypress:open": "cypress open"
-  },
+ "scripts": {
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!my-library-dir)/'",
+  "eject": "react-scripts eject",
+  "cypress:open": "cypress open"
+},
   "eslintConfig": {
     "extends": [
       "react-app",
