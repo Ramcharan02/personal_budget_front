@@ -10,3 +10,6 @@ describe("Sign up page visualization", () => {
       cy.eyesClose();
     });
   });
+
+
+  

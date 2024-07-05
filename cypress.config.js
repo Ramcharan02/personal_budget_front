@@ -1,7 +1,9 @@
 
-const { defineConfig } = require('cypress');
 
-module.exports = defineConfig({
+const { defineConfig } = require('cypress');
+const eyesPlugin = require("@applitools/eyes-cypress");
+
+module.exports = eyesPlugin(defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       // Add plugins or event listeners here
@@ -11,5 +13,5 @@ module.exports = defineConfig({
     projectId: "z6c1kg", // Replace with your actual project ID
     specPattern: 'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}'
   }
-});
+}));
 

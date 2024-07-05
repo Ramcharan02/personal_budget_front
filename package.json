@@ -22,7 +22,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+<<<<<<< HEAD
     "test": "react-scripts test--transformIgnorePatterns 'node_modules/(?!my-library-dir)/'",
+=======
+    "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!my-library-dir)/'",
+>>>>>>> a1863939 (changes)
     "eject": "react-scripts eject",
     "cypress:open": "cypress open"
   },
