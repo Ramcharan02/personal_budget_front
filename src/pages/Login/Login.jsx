@@ -71,7 +71,7 @@ const Login = () => {
           Sign in
         </button>
         <p style={{color:"white"}}>
-          Create an account here <Link to="/signup">Sign up</Link>
+          Create an account here <Link to="/signup">Sign up</Link> for TEST LOGIN with Email: abc@gmail.com and PASSWORD: 12345678
         </p>
       </form>
     </main>
